@@ -19,6 +19,7 @@
     "ios": {
       "supportsTablet": true
     },
+    "description": "A marketplace for hosting and renting secluded spaces for study and work.",
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
