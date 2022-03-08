@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
+import { lightTheme } from '../themes/themes';
 
 function ViewImageScreen() {
   return (
@@ -20,12 +21,12 @@ export default ViewImageScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: lightTheme.black,
   },
   closeIcon: {
     width: 50,
     height: 50,
-    backgroundColor: "#fc5c65",
+    backgroundColor: lightTheme.primary,
     position: "absolute",
     top: 40,
     left: 30,
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
   deleteIcon: {
     width: 50,
     height: 50,
-    backgroundColor: "#4ecdc4",
+    backgroundColor: lightTheme.secondary,
     position: "absolute",
     top: 40,
     right: 30,
