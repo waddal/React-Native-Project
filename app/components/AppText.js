@@ -8,10 +8,11 @@ function AppText({ children }) {
 
 const styles = StyleSheet.create({
   text: {
-    color: 'tomato',
+    color: 'white',
+    fontWeight: '900',
     ...Platform.select({
         ios: {
-          fontSize: 18,
+          fontSize: 20,
           fontFamily: "Avenir",
         },
         android: {
@@ -19,18 +20,6 @@ const styles = StyleSheet.create({
           fontFamily: "Roboto",
         },
       })
-  },
-});
-
-//Responsive OS Styles
-Platform.select({
-  ios: {
-    fontSize: 18,
-    fontFamily: "Avenir",
-  },
-  android: {
-    fontSize: 18,
-    fontFamily: "Roboto",
   },
 });
 
