@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import AppText from '../components/AppText.js';
+import AppText from "../components/AppText.js";
 
 function TestComponent() {
   return (
@@ -9,6 +10,7 @@ function TestComponent() {
       <View style={styles.icon}></View>
       <Text style={styles.text}>i love rice ❤️ </Text>
       <AppText>test text</AppText>
+      <MaterialCommunityIcons name="email" size={60} color="dodgerblue" />
     </View>
   );
 }
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 100,
     height: 100,
-    backgroundColor: 'floralwhite',
+    backgroundColor: "floralwhite",
 
     //BORDER
     borderWidth: 5,
@@ -47,10 +49,10 @@ const styles = StyleSheet.create({
   text: {
     margin: 20,
     fontSize: 15,
-    fontStyle: 'italic',
-    fontWeight: '600',
-    textTransform: 'capitalize',
-    textAlign: 'center',
+    fontStyle: "italic",
+    fontWeight: "600",
+    textTransform: "capitalize",
+    textAlign: "center",
     lineHeight: 50,
   },
 });
