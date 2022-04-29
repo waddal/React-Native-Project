@@ -1,0 +1,4 @@
+{
+  "exclude": ["node_modules"]
+}
+//tells vscode to treat this as a JS and not a TS project

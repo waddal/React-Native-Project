@@ -6,7 +6,7 @@ export const lightTheme = {
     white: "#F8F8FF"
 };
 
-export const otherTheme = {
+export const darkTheme = {
     primary: "#33A1FD",
     secondary: "#F79824",
     accent: "#31393C",
