@@ -1,12 +1,12 @@
 import React from "react";
-import TestComponent from "./app/screens/TestComponent";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
+import TestComponent from "./app/screens/TestComponent";
 
 export default function App() {
   return (
-    // <WelcomeScreen />
+    <WelcomeScreen />
     // <ViewImageScreen />
-    <TestComponent />
+    // <TestComponent />
   );
 }

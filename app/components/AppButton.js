@@ -1,17 +1,17 @@
 import React from "react";
-import { Button, StyleSheet, Platform, Text } from "react-native";
+import { StyleSheet, Platform, Text } from "react-native";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
-import { monochrome } from '../themes/themes.js';
+import { colors } from '../colors';
 
-export const AppButton = ({ title, color, accessibilityLabel, handleOnPress, handlePressOut }) => {
+export const AppButton = ({ title, color = "primary", accessibilityLabel, handleOnPress, handlePressOut }) => {
 
   return (
     <Pressable
       style={({ pressed }) => [
         styles.button,
         {
-          backgroundColor: pressed ? "crimson" : color,
+          backgroundColor: pressed ? "crimson" : colors[color],
         },
       ]}
       onPressIn={handleOnPress}
@@ -29,14 +29,13 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: 60,
-    width: "95%",
-    borderRadius: 15,
+    width: "100%",
     padding: 15,
-    margin: 5,
+    borderRadius: 25,
+    marginVertical: 10,
   },
   text: {
-    color: monochrome.white,
+    color: colors.white,
     fontSize: Platform.OS === "android" ? 18 : 20,
     textTransform: 'uppercase',
     fontWeight: 'bold',

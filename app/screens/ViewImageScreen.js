@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 
-import { monochrome, lightTheme } from '../themes/themes';
+import { colors } from '../colors';
 
 function ViewImageScreen() {
   return (
@@ -22,12 +22,12 @@ export default ViewImageScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: monochrome.black,
+    backgroundColor: colors.black,
   },
   closeIcon: {
     width: 50,
     height: 50,
-    backgroundColor: lightTheme.primary,
+    backgroundColor: colors.primary,
     borderWidth: 5,
     borderColor: 'royalblue',
     borderRadius: 10,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   deleteIcon: {
     width: 50,
     height: 50,
-    backgroundColor: lightTheme.secondary,
+    backgroundColor: colors.secondary,
     borderWidth: 5,
     borderColor: 'orange',
     borderRadius: 10,
