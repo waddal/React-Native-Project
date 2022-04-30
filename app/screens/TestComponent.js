@@ -6,14 +6,32 @@ import AppText from "../components/AppText.js";
 import { AppButton } from "../components/AppButton.js";
 
 function TestComponent() {
+  const handlePressOut = () => {
+    console.log("Press released!");
+  };
+
+  const handleOnPress = () => {
+    console.log("Component pressed..");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.icon}></View>
       <Text style={styles.text}>i love jessie ❤️ </Text>
       <AppText>test text</AppText>
       <MaterialCommunityIcons name="email" size={60} color="dodgerblue" />
-      <AppButton title="Login" color="dodgerblue" accessibilityLabel="click me if you dare"/>
-      <AppButton title="Register" color="green" accessibilityLabel="click me if you dare"/>
+      <AppButton
+        title="Login"
+        color="dodgerblue"
+        accessibilityLabel="click me if you dare"
+        handleOnPress={handleOnPress}
+        handlePressOut={handlePressOut}
+      />
+      <AppButton
+        title="Register"
+        color="green"
+        accessibilityLabel="click me if you dare"
+      />
     </View>
   );
 }

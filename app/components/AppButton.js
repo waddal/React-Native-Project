@@ -1,40 +1,25 @@
 import React from "react";
-import { Button, StyleSheet, Platform } from "react-native";
+import { Button, StyleSheet, Platform, Text } from "react-native";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
-import AppText from "./AppText";
 
-export const AppButton = ({ title, color, accessibilityLabel }) => {
-  const handleClick = () => {
-    console.log("pressOut activated!");
-  };
+import { monochrome } from '../themes/themes.js';
 
-  const handleOnPress = () => {
-    console.log("onPressIn!");
-  };
+export const AppButton = ({ title, color, accessibilityLabel, handleOnPress, handlePressOut }) => {
 
   return (
-    //android
-    // <Button
-    //   style={styles.button}
-    //   title={title}
-    //   color={color}
-    //   accessibilityLabel={accessibilityLabel}
-    // />
-
-    //iOS
     <Pressable
       style={({ pressed }) => [
         styles.button,
         {
-          backgroundColor: pressed ? "white" : color,
+          backgroundColor: pressed ? "crimson" : color,
         },
       ]}
       onPressIn={handleOnPress}
-      onLongPress={() => console.log("HODL!")}
-      onPressOut={handleClick}
+      onLongPress={() => console.log("Component is pressed...")}
+      onPressOut={handlePressOut}
       accessibilityLabel={accessibilityLabel}
     >
-      <AppText style={styles.text}>{title}</AppText>
+      <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
 };
@@ -47,10 +32,13 @@ const styles = StyleSheet.create({
     height: 60,
     width: "95%",
     borderRadius: 15,
+    padding: 15,
     margin: 5,
   },
   text: {
-    color: "white",
+    color: monochrome.white,
     fontSize: Platform.OS === "android" ? 18 : 20,
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
   },
 });
