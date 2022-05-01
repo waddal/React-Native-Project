@@ -2,14 +2,12 @@ import React from "react";
 //imrn
 import { Text, StyleSheet, Platform } from "react-native";
 
-function AppText({ children }) {
-  return <Text style={styles.text}>{children}</Text>;
+function AppText({ children, style }) {
+  return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
 const styles = StyleSheet.create({
   text: {
-    color: 'white',
-    fontWeight: '900',
     ...Platform.select({
         ios: {
           fontSize: 20,
