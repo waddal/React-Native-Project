@@ -4,6 +4,14 @@ import { View, StyleSheet, Image } from "react-native";
 import { colors } from "../colors";
 import AppText from "./AppText";
 
+/*
+    <Card
+    title="Jessies Feet Pics"
+    subTitle="$100"
+    image={require('../assets/jacket.jpg')}
+    />
+*/
+
 function Card({ title, subTitle, image }) {
   return (
     <View style={styles.card}>
@@ -23,7 +31,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: colors.white,
     marginBottom: 20,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   image: {
     width: "100%",
