@@ -16,7 +16,7 @@ function ListingsScreen() {
           <ListItem
             image={require("../assets/mosh.jpg")}
             title="Mosh"
-            subTitle="3 Listings"
+            description="3 Listings"
           />
         </View>
       </View>

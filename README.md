@@ -24,3 +24,6 @@ Developer Menu: command + M
 3. Text
 - numberOfLines={1}
 - onPress={() => console.log('a tag')}
+
+### 3rd Party Libraries
+- npm i expo-constants
