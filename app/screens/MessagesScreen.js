@@ -31,6 +31,7 @@ function MessagesScreen(props) {
             title={item.title}
             description={item.description}
             image={item.image}
+            handlePressOut={() => console.log("Message Sent: ", item)}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}

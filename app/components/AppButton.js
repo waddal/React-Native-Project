@@ -4,7 +4,7 @@ import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
 import { colors } from '../colors';
 
-export const AppButton = ({ title, color = "primary", accessibilityLabel }) => {
+export const AppButton = ({ title, color = "primary", pressColor = "medium", accessibilityLabel }) => {
 
   const handlePressOut = () => {
     console.log("Press released!");
@@ -20,7 +20,7 @@ export const AppButton = ({ title, color = "primary", accessibilityLabel }) => {
       style={({ pressed }) => [
         styles.button,
         {
-          backgroundColor: pressed ? "gainsboro" : colors[color],
+          backgroundColor: pressed ? colors[pressColor] : colors[color],
         },
       ]}
       onPressIn={handleOnPress}
