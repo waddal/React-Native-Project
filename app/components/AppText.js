@@ -1,5 +1,4 @@
 import React from "react";
-//imrn
 import { Text, StyleSheet, Platform } from "react-native";
 
 function AppText({ children, style }) {

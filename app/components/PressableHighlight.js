@@ -1,6 +1,7 @@
 import React from "react";
 import { Pressable } from "react-native";
-import { colors } from "../colors";
+
+import colors from "../config/colors";
 
 function PressableHighlight({ children, handlePressOut }) {
   return (

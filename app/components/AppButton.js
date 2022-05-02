@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, Platform, Text } from "react-native";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
-
-import { colors } from '../colors';
+import colors from "../config/colors";
 
 export const AppButton = ({ title, color = "primary", pressColor = "medium", accessibilityLabel }) => {
 

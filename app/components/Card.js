@@ -1,16 +1,8 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 
-import { colors } from "../colors";
+import { colors } from "../config/colors";
 import AppText from "./AppText";
-
-/*
-    <Card
-    title="Jessies Feet Pics"
-    subTitle="$100"
-    image={require('../assets/jacket.jpg')}
-    />
-*/
 
 function Card({ title, subTitle, image }) {
   return (
