@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { Switch } from 'react-native'
+
 import AppText from "../components/AppText";
 import AppTextInput from "../components/AppTextInput";
-
 import Screen from "../components/Screen";
 import colors from "../config/colors";
 
 function FormScreen() {
   const [firstName, setFirstName] = useState("");
+  const [isNew, setIsNew] = useState(false);
 
   return (
     <Screen>
@@ -20,6 +22,7 @@ function FormScreen() {
         style={{ borderBottomColor: "#ccc", borderBottomWidth: 1 }}
       /> */}
       <AppTextInput placeholder="Username" icon={"email"} />
+      <Switch value={isNew} onValueChange={newValue => setIsNew(newValue)}/>
     </Screen>
   );
 }
