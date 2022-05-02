@@ -6,15 +6,16 @@ import PressableHighlight from "./PressableHighlight";
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-function ListItem({ title, description, image, handlePressOut, renderRightActions }) {
+function ListItem({ title, description, image, ImageComponent, handlePressOut, renderRightActions }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <PressableHighlight handlePressOut={handlePressOut}>
         <View style={styles.container}>
-          <Image style={styles.image} source={image} />
-          <View>
+          {ImageComponent}
+          {image && <Image style={styles.image} source={image} />}
+          <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
-            <AppText style={styles.description}>{description}</AppText>
+            {description && <AppText style={styles.description}>{description}</AppText>}
           </View>
         </View>
       </PressableHighlight>
@@ -33,7 +34,10 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 35,
-    marginRight: 10,
+  },
+  detailsContainer: {
+    marginLeft: 15,
+    justifyContent: 'center',
   },
   title: {
     fontWeight: "500",

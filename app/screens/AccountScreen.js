@@ -8,13 +8,18 @@ import ListItem from "../components/ListItem";
 function AccountScreen() {
   return (
     <Screen>
-      <Icon
-        name={"mail"}
-        size={50}
-        backgroundColor={"red"}
-        iconColor={"white"}
+      <ListItem
+        ImageComponent={
+          <Icon
+            name={"mail"}
+            size={50}
+            backgroundColor={"red"}
+            iconColor={"white"}
+          />
+        }
+        title={"An intriguing title"}
+        description={"Description tickles curiosity"}
       />
-      <ListItem  />
     </Screen>
   );
 }
