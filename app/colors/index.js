@@ -6,4 +6,5 @@ export const colors = {
     white: "#F8F8FF",
     light: "#F8F4F4",
     medium: "#6E6E69",
+    danger: '#FF5252'
 };

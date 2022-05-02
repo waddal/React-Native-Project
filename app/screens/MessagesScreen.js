@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import ListItem from "../components/ListItem";
+import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import ListItemSeparator from "../components/ListItemSeparator";
 import Screen from "../components/Screen";
 
@@ -18,6 +19,18 @@ const messages = [
     description: "D2",
     image: require("../assets/alan.jpg"),
   },
+  {
+    id: 3,
+    title: "T3",
+    description: "D3",
+    image: require("../assets/jess.jpg"),
+  },
+  {
+    id: 4,
+    title: "T4",
+    description: "D4",
+    image: require("../assets/alan.jpg"),
+  },
 ];
 
 function MessagesScreen(props) {
@@ -32,6 +45,7 @@ function MessagesScreen(props) {
             description={item.description}
             image={item.image}
             handlePressOut={() => console.log("Message Sent: ", item)}
+            renderRightActions={ListItemDeleteAction}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
@@ -42,6 +56,4 @@ function MessagesScreen(props) {
 
 export default MessagesScreen;
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});

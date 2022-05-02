@@ -27,3 +27,5 @@ Developer Menu: command + M
 
 ### 3rd Party Libraries
 - npm i expo-constants
+- expo install react-native-gesture-handler 
+(unlike npm, installing with expo ensures version compatability)

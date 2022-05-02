@@ -1,21 +1,24 @@
 import React from "react";
-import { View, Image, StyleSheet, Pressable } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 
 import { colors } from "../colors";
 import PressableHighlight from "./PressableHighlight";
 import AppText from "./AppText";
+import Swipeable from "react-native-gesture-handler/Swipeable";
 
-function ListItem({ title, description, image, handlePressOut }) {
+function ListItem({ title, description, image, handlePressOut, renderRightActions }) {
   return (
-    <PressableHighlight handlePressOut={handlePressOut}>
-      <View style={styles.container}>
-        <Image style={styles.image} source={image} />
-        <View>
-          <AppText style={styles.title}>{title}</AppText>
-          <AppText style={styles.description}>{description}</AppText>
+    <Swipeable renderRightActions={renderRightActions}>
+      <PressableHighlight handlePressOut={handlePressOut}>
+        <View style={styles.container}>
+          <Image style={styles.image} source={image} />
+          <View>
+            <AppText style={styles.title}>{title}</AppText>
+            <AppText style={styles.description}>{description}</AppText>
+          </View>
         </View>
-      </View>
-    </PressableHighlight>
+      </PressableHighlight>
+    </Swipeable>
   );
 }
 
