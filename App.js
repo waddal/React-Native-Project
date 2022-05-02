@@ -3,6 +3,7 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import AccountScreen from "./app/screens/AccountScreen";
+import FormScreen from "./app/screens/FormScreen";
 // import TestComponent from "./app/screens/TestComponent";
 // import ListingsScreen from "./app/screens/ListingsScreen";
 
@@ -12,7 +13,8 @@ export default function App() {
     // <ViewImageScreen />
     // <ListingsScreen />
     // <MessagesScreen />
-    <AccountScreen />
+    // <AccountScreen />
     // <TestComponent />
+    <FormScreen />
   );
 }
