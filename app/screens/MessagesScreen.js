@@ -25,16 +25,11 @@ const initialMessages = [
     description: "D3",
     image: require("../assets/jess.jpg"),
   },
-  {
-    id: 4,
-    title: "T4",
-    description: "D4",
-    image: require("../assets/alan.jpg"),
-  },
 ];
 
 function MessagesScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
   
   const handleDelete = (message) => {
     // const filteredMessages = messages.filter(m => m.id !== message.id);
@@ -54,9 +49,21 @@ function MessagesScreen(props) {
             image={item.image}
             handlePressOut={() => console.log("Message Sent: ", item)}
             renderRightActions={() => <ListItemDeleteAction handleOnPressOut={() => handleDelete(item)} />}
+
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 4,
+              title: "T4",
+              description: "D4",
+              image: require("../assets/mosh.jpg"),
+            },
+          ])
+        }}
       />
     </Screen>
   );
