@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     borderRadius: 50,
 
     //SHADOW - iOS
-    shadowColor: "medium",
     shadowOffset: { height: 10, width: 0 },
     shadowOpacity: 1,
 
