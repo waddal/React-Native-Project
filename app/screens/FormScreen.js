@@ -1,30 +1,44 @@
 import React, { useState } from "react";
-import { Switch } from 'react-native'
+import { Switch } from "react-native";
 
-import AppText from "../components/AppText";
+import AppPicker from "../components/AppPicker";
 import AppTextInput from "../components/AppTextInput";
 import Screen from "../components/Screen";
-import colors from "../config/colors";
+
+const categories = [
+  { label: "Energy", value: 1 },
+  { label: "Carbon Removal", value: 2 },
+  { label: "Transportation", value: 3 },
+];
 
 function FormScreen() {
-  const [firstName, setFirstName] = useState("");
   const [isNew, setIsNew] = useState(false);
+  const [category, setCategory] = useState(categories[0]);
 
   return (
     <Screen>
-      <AppText>{firstName}</AppText>
-      {/* <TextInput
-        secureTextEntry //boolean defaults true - conceals input
-        clearButtonMode="while-editing" //clear input - iOS only
-        maxLength={5}
-        onChangeText={(text) => setFirstName(text)}
-        placeholder="firstName"
-        style={{ borderBottomColor: "#ccc", borderBottomWidth: 1 }}
-      /> */}
-      <AppTextInput placeholder="Username" icon={"email"} />
-      <Switch value={isNew} onValueChange={newValue => setIsNew(newValue)}/>
+      {/* <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} /> */}
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={(item) => setCategory(item)}
+        items={categories}
+        icon={"apps"}
+        placeholder={"Category"}
+      />
+      <AppTextInput icon={"email"} placeholder={"Username"} />
     </Screen>
   );
 }
 
 export default FormScreen;
+
+{
+  /* <TextInput
+  secureTextEntry //boolean defaults true - conceals input
+  clearButtonMode="while-editing" //clear input - iOS only
+  maxLength={5}
+  onChangeText={(text) => setFirstName(text)}
+  placeholder="firstName"
+  style={{ borderBottomColor: "#ccc", borderBottomWidth: 1 }}
+/> */
+}
