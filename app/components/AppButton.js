@@ -1,19 +1,14 @@
 import React from "react";
-import { StyleSheet, Platform, Text } from "react-native";
-import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+import { StyleSheet, Platform, Text, Pressable } from "react-native";
 import colors from "../config/colors";
 
-export const AppButton = ({ title, color = "primary", pressColor = "medium", accessibilityLabel }) => {
-
-  const handlePressOut = () => {
-    console.log("Press released!");
-  };
-
-  const handleOnPress = () => {
-    console.log("Component pressed..");
-  };
-
-
+export const AppButton = ({
+  title,
+  color = "primary",
+  pressColor = "medium",
+  accessibilityLabel,
+  handleOnPress,
+}) => {
   return (
     <Pressable
       style={({ pressed }) => [
@@ -23,8 +18,8 @@ export const AppButton = ({ title, color = "primary", pressColor = "medium", acc
         },
       ]}
       onPressIn={handleOnPress}
-      onLongPress={() => console.log("Component is pressed...")}
-      onPressOut={handlePressOut}
+      onLongPress={() => console.log("onLongPress...")}
+      onPressOut={() => console.log("onPressOut!")}
       accessibilityLabel={accessibilityLabel}
     >
       <Text style={styles.text}>{title}</Text>
@@ -45,7 +40,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.white,
     fontSize: Platform.OS === "android" ? 18 : 20,
-    textTransform: 'uppercase',
-    fontWeight: 'bold',
+    textTransform: "uppercase",
+    fontWeight: "bold",
   },
 });

@@ -6,6 +6,7 @@ import AccountScreen from "./app/screens/AccountScreen";
 import FormScreen from "./app/screens/FormScreen";
 import TestComponent from "./app/screens/TestComponent";
 import ListingsScreen from "./app/screens/ListingsScreen";
+import LoginScreen from "./app/screens/LoginScreen";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
     // <ListingsScreen />
     // <MessagesScreen />
     // <AccountScreen />
-    // <TestComponent />
-    <FormScreen />
+    // <FormScreen />
+    <LoginScreen />
   );
 }
