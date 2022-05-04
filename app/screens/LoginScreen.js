@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Image, View } from "react-native";
+import { useForm } from "react-hook-form";
 
 import { AppButton } from "../components/AppButton";
 import AppTextInput from "../components/AppTextInput";
 import Screen from "../components/Screen";
 
 function LoginScreen() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const { register, setValue, handleSubmit, errors } = useForm();
+
+  const onSubmit = (data) => console.log("Login: ", data);
 
   return (
     <Screen>
@@ -18,23 +20,22 @@ function LoginScreen() {
           autoCorrect={false}
           icon={"account-outline"}
           keyboardType={"email-address"}
-          onChangeText={(text) => setEmail(text)}
+          onChangeText={(text) => setValue("username", text, true)}
           placeholder={"Username"}
           textContentType={"emailAddress"} //iOS only
+          register={{ ...register("username") }}
         />
         <AppTextInput
           autoCapitalize={"none"}
           autoCorrect={false}
           icon={"lock-outline"}
-          onChangeText={(text) => setPassword(text)}
+          onChangeText={(text) => setValue("password", text)}
           placeholder={"Password"}
           secureTextEntry //defaults to true
           textContentType={"password"}
+          register={{ ...register("username") }}
         />
-        <AppButton
-          title="Login"
-          handleOnPress={() => console.log("login!", email, password)}
-        />
+        <AppButton title="Login" handleOnPress={handleSubmit(onSubmit)} />
       </View>
     </Screen>
   );
