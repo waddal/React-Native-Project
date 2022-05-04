@@ -5,7 +5,7 @@ import { AppButton } from "../components/AppButton";
 import AppTextInput from "../components/AppTextInput";
 import Screen from "../components/Screen";
 
-function LoginScreen() {
+function Test() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -40,7 +40,7 @@ function LoginScreen() {
   );
 }
 
-export default LoginScreen;
+export default Test;
 
 const styles = StyleSheet.create({
   container: {

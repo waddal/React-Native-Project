@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Switch } from "react-native";
 
 import AppPicker from "../components/AppPicker";
 import AppTextInput from "../components/AppTextInput";
@@ -12,12 +11,10 @@ const categories = [
 ];
 
 function FormScreen() {
-  const [isNew, setIsNew] = useState(false);
   const [category, setCategory] = useState(categories[0]);
 
   return (
     <Screen>
-      {/* <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} /> */}
       <AppPicker
         selectedItem={category}
         onSelectItem={(item) => setCategory(item)}

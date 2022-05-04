@@ -29,3 +29,4 @@ Developer Menu: command + M
 - npm i expo-constants
 - expo install react-native-gesture-handler 
 (unlike npm, installing with expo ensures version compatability)
+- npm i react-hook-form
