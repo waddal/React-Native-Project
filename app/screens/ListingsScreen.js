@@ -1,9 +1,8 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 
-
 import AppText from "../components/AppText";
-import ListItem from "../components/lists/ListItem";
+import { ListItem } from "../components/lists";
 import colors from "../config/colors";
 
 function ListingsScreen() {
@@ -47,5 +46,5 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     marginVertical: 40,
-  }
+  },
 });

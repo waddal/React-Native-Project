@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
-import ListItem from "../components/lists/ListItem";
-import ListItemDeleteAction from "../components/lists/ListItemDeleteAction";
-import ListItemSeparator from "../components/lists/ListItemSeparator";
+import {
+  ListItem,
+  ListItemDeleteAction,
+  ListItemSeparator,
+} from "../components/lists";
 import Screen from "../components/Screen";
 
 const initialMessages = [
@@ -30,12 +32,12 @@ const initialMessages = [
 function MessagesScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
   const [refreshing, setRefreshing] = useState(false);
-  
+
   const handleDelete = (message) => {
     // const filteredMessages = messages.filter(m => m.id !== message.id);
     // setMessages(filteredMessages);
-    setMessages(messages.filter(m => m.id !== message.id));
-  }
+    setMessages(messages.filter((m) => m.id !== message.id));
+  };
 
   return (
     <Screen>
@@ -48,8 +50,11 @@ function MessagesScreen(props) {
             description={item.description}
             image={item.image}
             handlePressOut={() => console.log("Message Sent: ", item)}
-            renderRightActions={() => <ListItemDeleteAction handleOnPressOut={() => handleDelete(item)} />}
-
+            renderRightActions={() => (
+              <ListItemDeleteAction
+                handleOnPressOut={() => handleDelete(item)}
+              />
+            )}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
@@ -62,7 +67,7 @@ function MessagesScreen(props) {
               description: "D4",
               image: require("../assets/mosh.jpg"),
             },
-          ])
+          ]);
         }}
       />
     </Screen>
