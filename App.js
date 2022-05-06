@@ -16,7 +16,7 @@ export default function App() {
     // <MessagesScreen />
     // <AccountScreen />
     // <FormScreen />
-    // <LoginScreen />
-    <Test />
+    <LoginScreen />
+    // <Test />
   );
 }
