@@ -1,25 +1,33 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
+  name: Yup.string().required().min(3).label("Name"),
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
 });
 
-function LoginScreen() {
+function RegisterScreen() {
   return (
     <Screen>
       <View style={styles.container}>
-        <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <AppForm
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ name: "", email: "", password: "" }}
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
+          <AppFormField
+            autoCapitalize={"none"}
+            autoCorrect={false}
+            icon={"account-outline"}
+            name={"name"}
+            placeholder={"Name"}
+            textContentType={"name"}
+          />
           <AppFormField
             autoCapitalize={"none"}
             autoCorrect={false}
@@ -27,7 +35,7 @@ function LoginScreen() {
             keyboardType={"email-address"}
             name={"email"}
             placeholder={"Email"}
-            textContentType={"email"}
+            textContentType={"emailAddress"}
           />
           <AppFormField
             autoCapitalize={"none"}
@@ -39,24 +47,17 @@ function LoginScreen() {
             textContentType={"password"}
             ellipsizeMode="end"
           />
-          <SubmitButton title="Login" />
+          <SubmitButton title="Register" />
         </AppForm>
       </View>
     </Screen>
   );
 }
 
-export default LoginScreen;
+export default RegisterScreen;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-  },
-  logo: {
-    width: 80,
-    height: 80,
-    alignSelf: "center",
-    marginTop: 50,
-    marginBottom: 20,
+    padding: 10,
   },
 });
