@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
 import PressableHighlight from "../PressableHighlight";
@@ -14,9 +15,10 @@ function ListItem({ title, description, image, IconComponent, handlePressOut, re
           {IconComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.detailsContainer}>
-            <AppText style={styles.title}>{title}</AppText>
-            {description && <AppText style={styles.description}>{description}</AppText>}
+            <AppText style={styles.title} numberOfLines={1}>{title}</AppText>
+            {description && <AppText style={styles.description} numberOfLines={2}>{description}</AppText>}
           </View>
+          <MaterialCommunityIcons color={colors.medium} name="chevron-right" size={25}/>
         </View>
       </PressableHighlight>
     </Swipeable>
@@ -27,6 +29,7 @@ export default ListItem;
 
 const styles = StyleSheet.create({
   container: {
+    alignItems:"center",
     flexDirection: "row",
     padding: 15,
     backgroundColor: colors.white,
@@ -37,6 +40,7 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   detailsContainer: {
+    flex: 1,
     marginLeft: 15,
     justifyContent: 'center',
   },

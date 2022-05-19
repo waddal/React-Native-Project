@@ -11,8 +11,8 @@ import Screen from "../components/Screen";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "Jessie",
+    description: `Aenean non rutrum orci. Maecenas non pharetra diam. Suspendisse tempus mi ante, vel dictum nulla lobortis a. In fermentum, dui sit amet interdum pharetra, massa dui blandit diam, sed varius nisl tellus eu tellus. Sed sed turpis ultrices felis imperdiet vulputate ut id nisl. Donec nec dictum quam. Morbi in dui libero. Integer sagittis lacinia facilisis. Fusce feugiat lectus quam. Aliquam viverra, elit id vulputate pellentesque, ipsum nibh gravida metus, nec cursus felis turpis eleifend felis. Vivamus ac tristique ligula, vel pretium nibh. Duis et sapien magna. Pellentesque vitae nunc dolor.`,
     image: require("../assets/jess.jpg"),
   },
   {

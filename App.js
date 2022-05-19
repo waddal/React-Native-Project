@@ -14,11 +14,11 @@ export default function App() {
     // <WelcomeScreen />
     // <ViewImageScreen />
     // <ListingsScreen />
-    // <MessagesScreen />
+    <MessagesScreen />
     // <AccountScreen />
     // <LoginScreen />
     // <RegisterScreen />
-    <ListingEditScreen />
+    // <ListingEditScreen />
     // <Test />
   );
 }
