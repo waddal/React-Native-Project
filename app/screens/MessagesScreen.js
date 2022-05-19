@@ -12,26 +12,26 @@ const initialMessages = [
   {
     id: 1,
     title: "Jessie",
-    description: `Aenean non rutrum orci. Maecenas non pharetra diam. Suspendisse tempus mi ante, vel dictum nulla lobortis a. In fermentum, dui sit amet interdum pharetra, massa dui blandit diam, sed varius nisl tellus eu tellus. Sed sed turpis ultrices felis imperdiet vulputate ut id nisl. Donec nec dictum quam. Morbi in dui libero. Integer sagittis lacinia facilisis. Fusce feugiat lectus quam. Aliquam viverra, elit id vulputate pellentesque, ipsum nibh gravida metus, nec cursus felis turpis eleifend felis. Vivamus ac tristique ligula, vel pretium nibh. Duis et sapien magna. Pellentesque vitae nunc dolor.`,
+    description: `Hi! Is the item still available?`,
     image: require("../assets/jess.jpg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title: "Alan",
+    description: `Hey, yes! But there is someone else bidding for it right now...`,
     image: require("../assets/alan.jpg"),
   },
   {
     id: 3,
-    title: "T3",
-    description: "D3",
+    title: "Jessie",
+    description: `Hmm, well maybe I can sweeten the deal c;`,
     image: require("../assets/jess.jpg"),
   },
 ];
 
 function MessagesScreen(props) {
   const [messages, setMessages] = useState(initialMessages);
-  const [refreshing, setRefreshing] = useState(false);
+  const [refreshing] = useState(false);
 
   const handleDelete = (message) => {
     // const filteredMessages = messages.filter(m => m.id !== message.id);
@@ -63,8 +63,8 @@ function MessagesScreen(props) {
           setMessages([
             {
               id: 4,
-              title: "T4",
-              description: "D4",
+              title: "David",
+              description: `We have a deal then? $50 and some meatballs.`,
               image: require("../assets/mosh.jpg"),
             },
           ]);

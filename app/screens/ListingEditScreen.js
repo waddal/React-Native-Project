@@ -54,11 +54,13 @@ function ListingEditScreen() {
             name={"price"}
             maxLength={8}
             placeholder={"Price"}
+            width={130}
           />
           <AppFormPicker
             items={categories}
             icon={"apps"}
             name={"category"}
+            width={"50%"}
             placeholder={"Category"}
           />
           <AppFormField

@@ -8,9 +8,11 @@ import colors from "../config/colors";
 function ListingsScreen() {
   return (
     <View style={styles.background}>
+      {/* Utilize Card component */}
+      {/* <Card title={"Happy Pills for sale"} subTitle={"$100"} image={require("../assets/jacket.jpg")}/> */}
       <Image style={styles.image} source={require("../assets/jacket.jpg")} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Happy Pills for sale</AppText>
+        <AppText style={styles.title} numberOfLines={1}>Happy Pills for sale</AppText>
         <AppText style={styles.price}>$100</AppText>
         <View style={styles.userContainer}>
           <ListItem
