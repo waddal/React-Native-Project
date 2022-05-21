@@ -9,6 +9,7 @@ import {
   AppFormPicker,
   SubmitButton,
 } from "../components/forms";
+import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(3).label("Title"),
@@ -18,10 +19,15 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Candy", value: 1 },
-  { label: "Energy", value: 2 },
-  { label: "Carbon Removal", value: 3 },
-  { label: "Transportation", value: 4 },
+  { label: "Furniture", value: 1, backgroundColor: "crimson", icon: "apps" },
+  { label: "Apparel", value: 2, backgroundColor: "darkkhaki", icon: "email" },
+  { label: "Vehicles", value: 3, backgroundColor: "darkslateblue", icon: "lock" },
+  { label: "Electronics", value: 4, backgroundColor: "darkcyan", icon: "lock" },
+  { label: "Games", value: 5, backgroundColor: "darksalmon", icon: "lock" },
+  { label: "Sports", value: 6, backgroundColor: "darkmagenta", icon: "lock" },
+  { label: "Music & Movies", value: 7, backgroundColor: "olive", icon: "lock" },
+  { label: "Books", value: 8, backgroundColor: "plum", icon: "lock" },
+  { label: "Health", value: 9, backgroundColor: "peru", icon: "lock" },
 ];
 
 function ListingEditScreen() {
@@ -60,7 +66,9 @@ function ListingEditScreen() {
             items={categories}
             icon={"apps"}
             name={"category"}
+            numberOfColumns={3}
             width={"50%"}
+            PickerItemComponent={CategoryPickerItem}
             placeholder={"Category"}
           />
           <AppFormField
