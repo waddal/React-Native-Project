@@ -111,3 +111,32 @@
 
 // export default LoginScreen;
 // */
+
+import React, { useEffect } from 'react';
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
+import { StyleSheet } from 'react-native';
+
+import Screen from '../components/Screen';
+
+function Test() {
+    const requestPermission = async () => {
+        Permissions.askAsync(Permissions.CAMERA, Permissions.LOCATION_FOREGROUND)
+        const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+        if(!granted) alert("You need to grant permission to access library.")
+    }
+
+    useEffect(() => {
+        requestPermission()
+    }, [])
+
+    return (
+        <Screen></Screen>
+    );
+}
+
+export default Test;
+
+const styles = StyleSheet.create({
+    container: {},
+})
