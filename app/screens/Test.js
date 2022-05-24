@@ -117,36 +117,26 @@ import * as Permissions from "expo-permissions";
 import { StyleSheet, Image, Button } from "react-native";
 
 import Screen from "../components/Screen";
-import { AppButton } from "../components/AppButton";
-import ImageInput from "../components/ImageInput";
+import ImageInputList from "../components/ImageInputList";
 
 function Test() {
-  const [imageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
 
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-    if (!granted) alert("You need to grant permission to access library.");
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
   };
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
-
-  const selectImage = async () => {
-    console.log('select')
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancel) setImageUri(result.uri);
-    } catch (error) {
-      console.log("error reading an image!");
-    }
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
   };
 
   return (
     <Screen>
-      {/* <Button title={"Select Image"} onPress={selectImage} /> */}
-      <ImageInput handleSelectImage={selectImage} imageUri={imageUri}/>
-      {/* <Image source={{ uri: imageUri }} style={{ height: 200, width: 200 }} /> */}
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
+      />
     </Screen>
   );
 }
