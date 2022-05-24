@@ -19,15 +19,15 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1, backgroundColor: "crimson", icon: "apps" },
-  { label: "Apparel", value: 2, backgroundColor: "darkkhaki", icon: "email" },
-  { label: "Vehicles", value: 3, backgroundColor: "darkslateblue", icon: "lock" },
-  { label: "Electronics", value: 4, backgroundColor: "darkcyan", icon: "lock" },
-  { label: "Games", value: 5, backgroundColor: "darksalmon", icon: "lock" },
-  { label: "Sports", value: 6, backgroundColor: "darkmagenta", icon: "lock" },
-  { label: "Music & Movies", value: 7, backgroundColor: "olive", icon: "lock" },
-  { label: "Books", value: 8, backgroundColor: "plum", icon: "lock" },
-  { label: "Health", value: 9, backgroundColor: "peru", icon: "lock" },
+  { label: "Furniture", value: 1, backgroundColor: "peru", icon: "chair-rolling" },
+  { label: "Apparel", value: 2, backgroundColor: "darkkhaki", icon: "tshirt-crew" },
+  { label: "Vehicles", value: 3, backgroundColor: "darkslateblue", icon: "car" },
+  { label: "Electronics", value: 4, backgroundColor: "darkcyan", icon: "car-battery" },
+  { label: "Games", value: 5, backgroundColor: "darksalmon", icon: "google-controller" },
+  { label: "Sports", value: 6, backgroundColor: "darkmagenta", icon: "basketball" },
+  { label: "Music & Movies", value: 7, backgroundColor: "olive", icon: "music-box" },
+  { label: "Books", value: 8, backgroundColor: "plum", icon: "book-open" },
+  { label: "Health", value: 9, backgroundColor: "crimson", icon: "heart-pulse" },
 ];
 
 function ListingEditScreen() {
