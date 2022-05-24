@@ -118,6 +118,7 @@ import { StyleSheet, Image, Button } from "react-native";
 
 import Screen from "../components/Screen";
 import { AppButton } from "../components/AppButton";
+import ImageInput from "../components/ImageInput";
 
 function Test() {
   const [imageUri, setImageUri] = useState();
@@ -132,6 +133,7 @@ function Test() {
   }, []);
 
   const selectImage = async () => {
+    console.log('select')
     try {
       const result = await ImagePicker.launchImageLibraryAsync();
       if (!result.cancel) setImageUri(result.uri);
@@ -142,8 +144,9 @@ function Test() {
 
   return (
     <Screen>
-      <Button title={"Select Image"} onPress={selectImage} />
-      <Image source={{ uri: imageUri }} style={{ height: 200, width: 200 }} />
+      {/* <Button title={"Select Image"} onPress={selectImage} /> */}
+      <ImageInput handleSelectImage={selectImage} imageUri={imageUri}/>
+      {/* <Image source={{ uri: imageUri }} style={{ height: 200, width: 200 }} /> */}
     </Screen>
   );
 }
