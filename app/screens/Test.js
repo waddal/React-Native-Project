@@ -64,7 +64,6 @@
 //   },
 // });
 
-
 // /* REACT-FORM-HOOKS
 // import React from "react";
 // import { StyleSheet, Image, View } from "react-native";
@@ -112,31 +111,45 @@
 // export default LoginScreen;
 // */
 
-import React, { useEffect } from 'react';
-import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
-import { StyleSheet } from 'react-native';
+import React, { useEffect, useState } from "react";
+import * as ImagePicker from "expo-image-picker";
+import * as Permissions from "expo-permissions";
+import { StyleSheet, Image, Button } from "react-native";
 
-import Screen from '../components/Screen';
+import Screen from "../components/Screen";
+import { AppButton } from "../components/AppButton";
 
 function Test() {
-    const requestPermission = async () => {
-        Permissions.askAsync(Permissions.CAMERA, Permissions.LOCATION_FOREGROUND)
-        const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-        if(!granted) alert("You need to grant permission to access library.")
+  const [imageUri, setImageUri] = useState();
+
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+    if (!granted) alert("You need to grant permission to access library.");
+  };
+
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.cancel) setImageUri(result.uri);
+    } catch (error) {
+      console.log("error reading an image!");
     }
+  };
 
-    useEffect(() => {
-        requestPermission()
-    }, [])
-
-    return (
-        <Screen></Screen>
-    );
+  return (
+    <Screen>
+      <Button title={"Select Image"} onPress={selectImage} />
+      <Image source={{ uri: imageUri }} style={{ height: 200, width: 200 }} />
+    </Screen>
+  );
 }
 
 export default Test;
 
 const styles = StyleSheet.create({
-    container: {},
-})
+  container: {},
+});
