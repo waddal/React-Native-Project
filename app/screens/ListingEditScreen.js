@@ -10,25 +10,66 @@ import {
   SubmitButton,
 } from "../components/forms";
 import CategoryPickerItem from "../components/CategoryPickerItem";
-import ImageInput from "../components/ImageInput";
+import AppFormImagePicker from "../components/forms/AppFormImagePicker";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(3).label("Title"),
   price: Yup.string().required().min(1).max(10000).label("Price"),
   description: Yup.string().required().max(256).label("Description"),
   category: Yup.object().required().nullable().label("Category"),
+  images: Yup.array().min(1, "Please select at least one image."),
 });
 
 const categories = [
-  { label: "Furniture", value: 1, backgroundColor: "peru", icon: "chair-rolling" },
-  { label: "Apparel", value: 2, backgroundColor: "darkkhaki", icon: "tshirt-crew" },
-  { label: "Vehicles", value: 3, backgroundColor: "darkslateblue", icon: "car" },
-  { label: "Electronics", value: 4, backgroundColor: "darkcyan", icon: "car-battery" },
-  { label: "Games", value: 5, backgroundColor: "darksalmon", icon: "google-controller" },
-  { label: "Sports", value: 6, backgroundColor: "darkmagenta", icon: "basketball" },
-  { label: "Music & Movies", value: 7, backgroundColor: "olive", icon: "music-box" },
+  {
+    label: "Furniture",
+    value: 1,
+    backgroundColor: "peru",
+    icon: "chair-rolling",
+  },
+  {
+    label: "Apparel",
+    value: 2,
+    backgroundColor: "darkkhaki",
+    icon: "tshirt-crew",
+  },
+  {
+    label: "Vehicles",
+    value: 3,
+    backgroundColor: "darkslateblue",
+    icon: "car",
+  },
+  {
+    label: "Electronics",
+    value: 4,
+    backgroundColor: "darkcyan",
+    icon: "car-battery",
+  },
+  {
+    label: "Games",
+    value: 5,
+    backgroundColor: "darksalmon",
+    icon: "google-controller",
+  },
+  {
+    label: "Sports",
+    value: 6,
+    backgroundColor: "darkmagenta",
+    icon: "basketball",
+  },
+  {
+    label: "Music & Movies",
+    value: 7,
+    backgroundColor: "olive",
+    icon: "music-box",
+  },
   { label: "Books", value: 8, backgroundColor: "plum", icon: "book-open" },
-  { label: "Health", value: 9, backgroundColor: "crimson", icon: "heart-pulse" },
+  {
+    label: "Health",
+    value: 9,
+    backgroundColor: "crimson",
+    icon: "heart-pulse",
+  },
 ];
 
 function ListingEditScreen() {
@@ -41,11 +82,12 @@ function ListingEditScreen() {
             price: "",
             description: "",
             category: null,
+            images: [],
           }}
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
-          <ImageInput />
+          <AppFormImagePicker name={"images"} />
           <AppFormField
             autoCapitalize={"none"}
             autoCorrect={false}
