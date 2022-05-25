@@ -147,36 +147,67 @@
 //   container: {},
 // });
 
+// REACT NAVIGATION
+// REACT NAVIGATION
+
 import React from "react";
-import { Text } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { Text, Button } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Screen from "../components/Screen";
 
-const Tweets = () => {
-  return (
-    <Screen>
-      <Text>Tweets</Text>
-    </Screen>
-  );
-};
+// const Link = () => {
+//   //alternate way to access navigation if not Screen
+//   const navigation = useNavigation();
 
-const TweetDetails = () => {
-  return (
-    <Screen>
-      <Text>Tweet Details</Text>
-    </Screen>
-  );
-};
+//   return (
+//     <Button title="View Tweets" onPress={() => navigation.navigate("TweetDetails")} />
+//   );
+// };
+
+const Tweets = ({ navigation }) => (
+  <Screen>
+    <Text>Tweets</Text>
+    <Button
+      title="View Tweet"
+      onPress={() => navigation.navigate("TweetDetails", { id: 1 })}
+    />
+  </Screen>
+);
+
+const TweetDetails = ({ route }) => (
+  //useRoute() if not Screen component
+  <Screen>
+    <Text>Tweet Details {route.params.id}</Text>
+  </Screen>
+);
 
 function Test() {
   const Stack = createNativeStackNavigator();
   const StackNavigator = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: "tomato" },
+          headerTintColor: "white",
+        }}
+      >
+        {/* Navigator gives Screen components built-in props */}
         <Stack.Screen name="Tweets" component={Tweets} />
-        <Stack.Screen name="TweetDetails" component={TweetDetails} />
+        <Stack.Screen
+          name="TweetDetails"
+          component={TweetDetails}
+          // options={{ title: "Tweet Deets" }}
+          options={{
+            title: "Tweet Deets",
+            headerStyle: { backgroundColor: "beige" },
+            headerTintColor: "black",
+          }}
+          // Navigation props are automatically passed to Screen components.
+          // here we destructure 'routes' and return an object, not a block of code(without parenthesis)
+          // options={({ route }) => ({ title: route.params.id })}
+        />
       </Stack.Navigator>
     );
   };
