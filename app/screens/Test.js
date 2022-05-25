@@ -154,6 +154,7 @@ import React from "react";
 import { Text, Button } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Screen from "../components/Screen";
 
@@ -183,7 +184,13 @@ const TweetDetails = ({ route }) => (
   </Screen>
 );
 
-function Test() {
+const Account = () => (
+  <Screen>
+    <Text>Account!</Text>
+  </Screen>
+);
+
+export default function Test() {
   const Stack = createNativeStackNavigator();
   const StackNavigator = () => {
     return (
@@ -193,30 +200,36 @@ function Test() {
           headerTintColor: "white",
         }}
       >
-        {/* Navigator gives Screen components built-in props */}
         <Stack.Screen name="Tweets" component={Tweets} />
-        <Stack.Screen
-          name="TweetDetails"
-          component={TweetDetails}
-          // options={{ title: "Tweet Deets" }}
-          options={{
-            title: "Tweet Deets",
-            headerStyle: { backgroundColor: "beige" },
-            headerTintColor: "black",
-          }}
-          // Navigation props are automatically passed to Screen components.
-          // here we destructure 'routes' and return an object, not a block of code(without parenthesis)
-          // options={({ route }) => ({ title: route.params.id })}
-        />
+        <Stack.Screen name="TweetDetails" component={TweetDetails} />
       </Stack.Navigator>
+    );
+  };
+
+  const Tab = createBottomTabNavigator();
+  const TabNavigator = () => {
+    return (
+      <Tab.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: 'gold',
+          tabBarInactiveTintColor: 'grey',
+          // tabBarShowLabel: false,
+          tabBarStyle: {
+            // paddingVertical: Platform.OS === 'ios' ? 20 : 0,
+            height: 78,
+            backgroundColor: 'tomato'
+          }
+        }}
+      >
+        <Tab.Screen name="Feed" component={Tweets} />
+        <Tab.Screen name="Account" component={Account} />
+      </Tab.Navigator>
     );
   };
 
   return (
     <NavigationContainer>
-      <StackNavigator />
+      <TabNavigator />
     </NavigationContainer>
   );
 }
-
-export default Test;
