@@ -11,7 +11,7 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 export default function App() {
   return (
-    // <WelcomeScreen />
+    <WelcomeScreen />
     // <ViewImageScreen />
     // <ListingsScreen />
     // <MessagesScreen />
@@ -19,6 +19,6 @@ export default function App() {
     // <LoginScreen />
     // <RegisterScreen />
     // <ListingEditScreen />
-    <Test />
+    // <Test />
   );
 }
