@@ -18,8 +18,8 @@ export const AppButton = ({
         },
       ]}
       onPressIn={handleOnPress}
-      onLongPress={() => console.log("onLongPress...")}
-      onPressOut={() => console.log("onPressOut!")}
+      // onLongPress={() => console.log("onLongPress...")}
+      // onPressOut={() => console.log("onPressOut!")}
       accessibilityLabel={accessibilityLabel}
     >
       <Text style={styles.text}>{title}</Text>
