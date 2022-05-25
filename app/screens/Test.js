@@ -111,38 +111,81 @@
 // export default LoginScreen;
 // */
 
-import React, { useEffect, useState } from "react";
-import * as ImagePicker from "expo-image-picker";
-import * as Permissions from "expo-permissions";
-import { StyleSheet, Image, Button } from "react-native";
+// import React, { useEffect, useState } from "react";
+// import * as ImagePicker from "expo-image-picker";
+// import * as Permissions from "expo-permissions";
+// import { StyleSheet, Image, Button } from "react-native";
+
+// import Screen from "../components/Screen";
+// import ImageInputList from "../components/ImageInputList";
+
+// function Test() {
+//   const [imageUris, setImageUris] = useState([]);
+
+//   const handleAdd = (uri) => {
+//     setImageUris([...imageUris, uri]);
+//   };
+
+//   const handleRemove = (uri) => {
+//     setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+//   };
+
+//   return (
+//     <Screen>
+//       <ImageInputList
+//         imageUris={imageUris}
+//         onAddImage={handleAdd}
+//         onRemoveImage={handleRemove}
+//       />
+//     </Screen>
+//   );
+// }
+
+// export default Test;
+
+// const styles = StyleSheet.create({
+//   container: {},
+// });
+
+import React from "react";
+import { Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Screen from "../components/Screen";
-import ImageInputList from "../components/ImageInputList";
+
+const Tweets = () => {
+  return (
+    <Screen>
+      <Text>Tweets</Text>
+    </Screen>
+  );
+};
+
+const TweetDetails = () => {
+  return (
+    <Screen>
+      <Text>Tweet Details</Text>
+    </Screen>
+  );
+};
 
 function Test() {
-  const [imageUris, setImageUris] = useState([]);
-
-  const handleAdd = (uri) => {
-    setImageUris([...imageUris, uri]);
-  };
-
-  const handleRemove = (uri) => {
-    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+  const Stack = createNativeStackNavigator();
+  const StackNavigator = () => {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name="Tweets" component={Tweets} />
+        <Stack.Screen name="TweetDetails" component={TweetDetails} />
+      </Stack.Navigator>
+    );
   };
 
   return (
-    <Screen>
-      <ImageInputList
-        imageUris={imageUris}
-        onAddImage={handleAdd}
-        onRemoveImage={handleRemove}
-      />
-    </Screen>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 }
 
 export default Test;
-
-const styles = StyleSheet.create({
-  container: {},
-});
