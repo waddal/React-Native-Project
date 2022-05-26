@@ -10,6 +10,8 @@ import RegisterScreen from "./app/screens/RegisterScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 
+import { NavigationContainer } from "@react-navigation/native";
+
 export default function App() {
   return (
     // <WelcomeScreen />
@@ -21,6 +23,8 @@ export default function App() {
     // <RegisterScreen />
     // <ListingEditScreen />
     // <Test />
-    <AuthNavigator />
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
   );
 }

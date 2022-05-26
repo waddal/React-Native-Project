@@ -6,16 +6,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import LoginScreen from "./LoginScreen";
 import { AppButton } from "../components/AppButton";
 
-function WelcomeScreen() {
-  const navigation = useNavigation();
-  // const Auth = createNativeStackNavigator();
-  // const AuthNavigator = () => {
-  //   return (
-  //     <Auth.Navigator>
-  //       <Auth.Screen name="Login" component={LoginScreen}/>
-  //     </Auth.Navigator>
-  //   )
-  // }
+function WelcomeScreen({ navigation }) {
 
   return (
     <ImageBackground

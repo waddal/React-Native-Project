@@ -36,7 +36,6 @@ function LoginScreen() {
             name={"password"}
             placeholder={"Password"}
             secureTextEntry
-            textContentType={"password"}
             ellipsizeMode="end"
           />
           <SubmitButton title="Login" />
