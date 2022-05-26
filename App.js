@@ -8,7 +8,7 @@ import LoginScreen from "./app/screens/LoginScreen";
 import Test from "./app/screens/Test";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
-import AuthNavigator from "./app/components/navigators/AuthNavigator";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 
 export default function App() {
   return (
