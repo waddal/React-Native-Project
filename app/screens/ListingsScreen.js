@@ -8,7 +8,7 @@ import colors from "../config/colors";
 const listings = [
   {
     id: 1,
-    title: "Red Pills for Sale",
+    title: "Happy Man for Sale",
     price: 20,
     image: require("../assets/jacket.jpg"),
   },
@@ -20,7 +20,7 @@ const listings = [
   },
 ];
 
-const ListingsScreen = () => {
+const ListingsScreen = ({ navigation }) => {
   return (
     <Screen style={styles.container}>
       <FlatList
@@ -31,6 +31,7 @@ const ListingsScreen = () => {
             title={item.title}
             subTitle={`$` + item.price}
             image={item.image}
+            onPress={() => navigation.navigate('ListingDetails', item)}
           />
         )}
       />
