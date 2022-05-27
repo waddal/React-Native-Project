@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 
+import colors from "../config/colors";
 import Icon from "../components/Icon";
 import Screen from "../components/Screen";
 import { ListItem, ListItemSeparator } from "../components/lists";
-import colors from "../config/colors";
+import routes from '../navigation/routes';
 
 const menuItems = [
   {
@@ -13,6 +14,7 @@ const menuItems = [
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
     },
+    targetScreen: routes.MY_LISTINGS,
   },
   {
     title: "My Messages",
@@ -20,7 +22,7 @@ const menuItems = [
       name: "email",
       backgroundColor: colors.secondary,
     },
-    targetScreen: "Messages",
+    targetScreen: routes.MESSAGES,
   },
 ];
 
