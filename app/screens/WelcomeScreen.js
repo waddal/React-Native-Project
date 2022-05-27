@@ -1,13 +1,9 @@
 import React from "react";
 import { ImageBackground, View, StyleSheet, Image, Text } from "react-native";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
-import LoginScreen from "./LoginScreen";
 import { AppButton } from "../components/AppButton";
 
 function WelcomeScreen({ navigation }) {
-
   return (
     <ImageBackground
       blurRadius={10}
@@ -19,8 +15,15 @@ function WelcomeScreen({ navigation }) {
         <Text style={styles.tagline}>Hello Visitor!</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title={"Login"} handleOnPress={() => navigation.navigate('Login')}/>
-        <AppButton title={"Register"} color={"secondary"} handleOnPress={() => navigation.navigate('Register')}/>
+        <AppButton
+          title={"Login"}
+          handleOnPress={() => navigation.navigate("Login")}
+        />
+        <AppButton
+          title={"Register"}
+          color={"secondary"}
+          handleOnPress={() => navigation.navigate("Register")}
+        />
       </View>
     </ImageBackground>
   );
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
   },
   tagline: {
     fontSize: 25,
-    fontWeight: '600',
+    fontWeight: "600",
     paddingVertical: 20,
-  }
+  },
 });
