@@ -1,54 +1,48 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 
-import AppText from "../components/AppText";
+import Screen from "../components/Screen";
 import Card from "../components/Card";
-import { ListItem } from "../components/lists";
 import colors from "../config/colors";
 
-function ListingsScreen() {
+const listings = [
+  {
+    id: 1,
+    title: "Red Pills for Sale",
+    price: 20,
+    image: require("../assets/jacket.jpg"),
+  },
+  {
+    id: 2,
+    title: "Comfort Couch",
+    price: 80,
+    image: require("../assets/couch.jpg"),
+  },
+];
+
+const ListingsScreen = () => {
   return (
-    <View style={styles.background}>
-      {/* Utilize Card component */}
-      <Card title={"Happy Pills for sale"} subTitle={"$100"} image={require("../assets/jacket.jpg")}/>
-      <Card title={"Sunny Plaza - 2.86acres"} subTitle={"$3,690,000"} image={require("../assets/jacket.jpg")}/>
-      {/* <Image style={styles.image} source={require("../assets/jacket.jpg")} />
-      <View style={styles.detailsContainer}>
-        <AppText style={styles.title} numberOfLines={1}>Happy Pills for sale</AppText>
-        <AppText style={styles.price}>$100</AppText>
-        <View style={styles.userContainer}>
-          <ListItem
-            image={require("../assets/mosh.jpg")}
-            title="Mosh"
-            description="3 Listings"
+    <Screen style={styles.container}>
+      <FlatList
+        data={listings}
+        keyExtractor={(listing) => listing.id.toString()}
+        renderItem={({ item }) => (
+          <Card
+            title={item.title}
+            subTitle={`$` + item.price}
+            image={item.image}
           />
-        </View>
-      </View> */}
-    </View>
+        )}
+      />
+    </Screen>
   );
-}
+};
 
 export default ListingsScreen;
 
 const styles = StyleSheet.create({
-  image: {
-    width: "100%",
-    height: 300,
-  },
-  detailsContainer: {
+  container: {
     padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "500",
-  },
-  price: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: colors.secondary,
-    marginVertical: 10,
-  },
-  userContainer: {
-    marginVertical: 40,
+    backgroundColor: colors.light,
   },
 });

@@ -13,18 +13,24 @@ import AuthNavigator from "./app/navigation/AuthNavigator";
 import { NavigationContainer } from "@react-navigation/native";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default function App() {
   return (
     // <WelcomeScreen />
-    // <ViewImageScreen />
-    // <ListingsScreen />
-    // <MessagesScreen />
-    // <AccountScreen />
     // <LoginScreen />
     // <RegisterScreen />
+
+    // <ListingsScreen />
     // <ListingEditScreen />
+    // <ListingDetailsScreen />
+    // <ViewImageScreen />
+
+    // <AccountScreen />
+    // <MessagesScreen />
+
     // <Test />
+
     <NavigationContainer theme={navigationTheme}>
       {/* <AuthNavigator /> */}
       <AppNavigator />
