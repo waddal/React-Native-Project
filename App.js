@@ -12,6 +12,7 @@ import AuthNavigator from "./app/navigation/AuthNavigator";
 
 import { NavigationContainer } from "@react-navigation/native";
 import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 export default function App() {
   return (
@@ -25,7 +26,8 @@ export default function App() {
     // <ListingEditScreen />
     // <Test />
     <NavigationContainer theme={navigationTheme}>
-      <AuthNavigator />
+      {/* <AuthNavigator /> */}
+      <AppNavigator />
     </NavigationContainer>
   );
 }

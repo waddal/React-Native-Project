@@ -2,6 +2,7 @@ import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 
 import AppText from "../components/AppText";
+import Card from "../components/Card";
 import { ListItem } from "../components/lists";
 import colors from "../config/colors";
 
@@ -9,8 +10,9 @@ function ListingsScreen() {
   return (
     <View style={styles.background}>
       {/* Utilize Card component */}
-      {/* <Card title={"Happy Pills for sale"} subTitle={"$100"} image={require("../assets/jacket.jpg")}/> */}
-      <Image style={styles.image} source={require("../assets/jacket.jpg")} />
+      <Card title={"Happy Pills for sale"} subTitle={"$100"} image={require("../assets/jacket.jpg")}/>
+      <Card title={"Sunny Plaza - 2.86acres"} subTitle={"$3,690,000"} image={require("../assets/jacket.jpg")}/>
+      {/* <Image style={styles.image} source={require("../assets/jacket.jpg")} />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title} numberOfLines={1}>Happy Pills for sale</AppText>
         <AppText style={styles.price}>$100</AppText>
@@ -21,7 +23,7 @@ function ListingsScreen() {
             description="3 Listings"
           />
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }
