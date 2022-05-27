@@ -18,8 +18,8 @@ function ListingDetailsScreen({ route }) {
         <AppText style={styles.price}>${listing.price}</AppText>
         <View style={styles.userContainer}>
           <ListItem
-            image={require("../assets/mosh.jpg")}
-            title="Mosh"
+            image={require("../assets/jess.jpg")}
+            title="Jess"
             description="3 Listings"
           />
         </View>

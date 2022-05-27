@@ -37,7 +37,7 @@ function AccountScreen({ navigation }) {
       <View style={styles.container}>
         <FlatList
           data={menuItems}
-          keyExtractor={(menuItem) => menuItem.id}
+          keyExtractor={(menuItem, index) => index.toString()}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}

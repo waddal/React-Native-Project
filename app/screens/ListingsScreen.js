@@ -14,7 +14,7 @@ const listings = [
   },
   {
     id: 2,
-    title: "Comfort Couch",
+    title: "Dilapidated Couch",
     price: 80,
     image: require("../assets/couch.jpg"),
   },
