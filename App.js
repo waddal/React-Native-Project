@@ -14,6 +14,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+import AccountNavigator from "./app/navigation/AccountNavigator";
 
 export default function App() {
   return (
@@ -32,7 +33,6 @@ export default function App() {
     // <Test />
 
     <NavigationContainer theme={navigationTheme}>
-      {/* <AuthNavigator /> */}
       <AppNavigator />
     </NavigationContainer>
   );
